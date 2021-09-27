@@ -30,10 +30,16 @@ export const Detail = () => {
               title="Birth Year"
               description={data?.person?.birthYear}
             />
-            <SectionHeader title={i18n.t('detail_screen_vehicles_section')} />
-            {data?.person.vehicleConnection.vehicles.map(({name}) => (
-              <DataCell title={name} />
-            ))}
+            {data.canShowVehicles ? (
+              <>
+                <SectionHeader
+                  title={i18n.t('detail_screen_vehicles_section')}
+                />
+                {data?.person?.vehicleConnection?.vehicles?.map(({name}) => (
+                  <DataCell title={name} />
+                ))}
+              </>
+            ) : null}
           </>
         )}
       </ScrollView>

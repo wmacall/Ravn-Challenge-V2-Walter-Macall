@@ -1,5 +1,6 @@
 import {useQuery} from '@apollo/client';
 import {GET_PERSON_BY_ID, IPersonDetail} from 'graphql/queries/person';
+import {detailParser} from 'utils/detailParser';
 
 export const useDetail = (id: string) => {
   const {
@@ -11,10 +12,11 @@ export const useDetail = (id: string) => {
       id,
     },
   });
-  console.log(data);
+
+  const detailParsed = detailParser(data);
   return {
     isLoading,
-    data,
+    data: detailParsed,
     error,
   };
 };
