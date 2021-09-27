@@ -2,5 +2,6 @@
   "home_screen_title": "People of Star Wars",
   "error_loading_data_message": "Failed to Load Data",
   "loading": "Loading",
-  "detail_screen_title": "General Information"
+  "detail_screen_title": "General Information",
+  "detail_screen_vehicles_section": "Vehicles"
 }

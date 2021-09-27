@@ -16,3 +16,22 @@ export const GET_PERSON_BY_ID = gql`
     }
   }
 `;
+
+interface IVehicles {
+  name: string;
+}
+
+interface IVehicleConnection {
+  vehicles: [IVehicles] | [];
+}
+interface IPerson {
+  name: string;
+  birthYear: string;
+  eyeColor: string;
+  hairColor: string;
+  skinColor: string;
+  vehicleConnection: IVehicleConnection;
+}
+export interface IPersonDetail {
+  person: IPerson;
+}

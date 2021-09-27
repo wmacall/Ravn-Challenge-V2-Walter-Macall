@@ -1,4 +1,4 @@
 export interface IDataCellProps {
-  title: string;
-  description: string;
+  title: string | undefined | null;
+  description?: string | undefined | null;
 }
