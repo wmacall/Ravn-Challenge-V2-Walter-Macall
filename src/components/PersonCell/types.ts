@@ -1,5 +1,6 @@
 export interface IPersonCellProps {
   title: string | null;
   description: string | null;
-  onPress: () => void;
+  id: string;
+  onPress: (id: string) => void;
 }

@@ -9,6 +9,7 @@ export const PersonCell: FC<IPersonCellProps> = ({
   title,
   description,
   onPress,
+  id,
 }) => (
   <>
     <View style={styles.container}>
@@ -18,7 +19,7 @@ export const PersonCell: FC<IPersonCellProps> = ({
           <Typography variant="P1">{description}</Typography>
         </Cell>
       </View>
-      <Pressable onPress={onPress} style={styles.arrowButton}>
+      <Pressable onPress={() => onPress(id)} style={styles.arrowButton}>
         <ArrowIcon />
       </Pressable>
     </View>
