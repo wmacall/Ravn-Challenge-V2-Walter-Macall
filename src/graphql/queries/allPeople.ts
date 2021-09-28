@@ -1,8 +1,12 @@
 import {gql} from '@apollo/client';
 
 export const GET_ALL_PEOPLE = gql`
-  query {
-    allPeople {
+  query allPeople($after: String) {
+    allPeople(first: 5, after: $after) {
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
       people {
         id
         name
@@ -34,6 +38,10 @@ interface IPeople {
 
 interface IAllPeople {
   people: [IPeople];
+  pageInfo: {
+    endCursor: string;
+    hasNextPage: boolean;
+  };
 }
 
 export interface IPeopleResult {

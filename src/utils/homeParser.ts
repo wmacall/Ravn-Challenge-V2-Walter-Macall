@@ -14,5 +14,8 @@ export const homeParser = (data: IPeopleResult | undefined) => {
     },
   );
 
-  return parsedPeople;
+  return {
+    pageInfo: data?.allPeople.pageInfo,
+    data: parsedPeople,
+  };
 };
