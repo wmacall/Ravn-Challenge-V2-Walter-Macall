@@ -8,6 +8,6 @@ export default StyleSheet.create({
     backgroundColor: COLORS.WHITE,
   },
   contentContainerStyle: {
-    paddingBottom: size.xl,
+    paddingBottom: size.xxxl,
   },
 });

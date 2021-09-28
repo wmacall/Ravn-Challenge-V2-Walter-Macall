@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FlatList, View} from 'react-native';
+import {Alert, FlatList, View} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 import {Header, LoadingCell, NoticeCell, PersonCell} from '@components';
 import i18n from '@i18n';
@@ -39,7 +39,7 @@ export const Home = () => {
           keyExtractor={({id}, index) => `${id}-${index}`}
           contentContainerStyle={styles.contentContainerStyle}
           renderItem={({item}) => <PersonCell onPress={onPress} {...item} />}
-          onEndReachedThreshold={0}
+          onEndReachedThreshold={0.5}
           onEndReached={onEndReached}
           ListFooterComponent={isLoadingMore ? <LoadingCell /> : null}
         />
