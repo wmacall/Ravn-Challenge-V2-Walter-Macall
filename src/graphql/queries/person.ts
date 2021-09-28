@@ -10,6 +10,7 @@ export const GET_PERSON_BY_ID = gql`
       skinColor
       vehicleConnection {
         vehicles {
+          id
           name
         }
       }
@@ -18,6 +19,7 @@ export const GET_PERSON_BY_ID = gql`
 `;
 
 interface IVehicles {
+  id: string;
   name: string;
 }
 

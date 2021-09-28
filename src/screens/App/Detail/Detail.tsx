@@ -35,9 +35,11 @@ export const Detail = () => {
                 <SectionHeader
                   title={i18n.t('detail_screen_vehicles_section')}
                 />
-                {data?.person?.vehicleConnection?.vehicles?.map(({name}) => (
-                  <DataCell title={name} />
-                ))}
+                {data?.person?.vehicleConnection?.vehicles?.map(
+                  ({name, id}) => (
+                    <DataCell key={id} title={name} />
+                  ),
+                )}
               </>
             ) : null}
           </>
